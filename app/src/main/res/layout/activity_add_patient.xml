@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addPatientActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:id="@+id/patientDetailsCV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8.0dip">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/CV1Heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16.0dip"
+                    android:text="Patient Demographic Details"
+                    android:layout_centerHorizontal="true" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/demographicDetailLL"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/CV1Heading">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6.0dip">
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/patientName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:hint=" Enter Name" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6.0dip">
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/patientNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:hint="Enter Number"
+                            android:inputType="phone" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6.0dip">
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/patientAge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:hint="Age"
+                            android:inputType="number" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6.0dip">
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/patientEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:hint="E-mail" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6.0dip">
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/patientAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:hint="Address" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6.0dip">
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/patientReference"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:hint="Referred By" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6.0dip">
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/patientID"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:hint="Patient ID" />
+                    </android.support.design.widget.TextInputLayout>
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:id="@+id/genderRG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/maleGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Male" />
+                        <RadioButton
+                            android:id="@+id/femaleGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="Female" />
+                    </RadioGroup>
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/audioLogicalCV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8.0dip">
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:id="@+id/CV2Heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16.0dip"
+                    android:text="Audiological Examination" />
+                <RadioGroup
+                    android:orientation="vertical"
+                    android:id="@+id/audiologyRG"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/condLossRD11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16.0dip"
+                        android:text="Conductive Loss" />
+                    <RadioButton android:id="@+id/normalRD12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16.0dip"
+                        android:text="Normal" />
+                    <RadioButton
+                        android:id="@+id/mixedLossRD12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16.0dip"
+                        android:text="Mixed Loss" />
+                    <RadioButton
+                        android:id="@+id/shLossRD12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16.0dip"
+                        android:text="SH Loss" />
+                </RadioGroup>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/earHistoryCV"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="8.0dip">-->
+            <!--<LinearLayout-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+                <!--<TextView android:textSize="18.0sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/colorPrimary"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:id="@+id/CV3Heading"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="16.0dip"-->
+                    <!--android:text="Ear Examination and History" />-->
+                <!--<LinearLayout-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:id="@+id/EarHistoryLL"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent">-->
+                    <!--<TextView android:textSize="16.0sp"-->
+                        <!--android:textColor="@color/colorAccent"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_margin="16.0dip"-->
+                        <!--android:text="(a) Wax Examination by torch/earlight" />-->
+                    <!--<RadioGroup-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:id="@+id/waxExaminationRG"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/cleanEarRD21"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="16.0dip"-->
+                            <!--android:text="Clean Ear Canal" />-->
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/waxEarRD22"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="16.0dip"-->
+                            <!--android:text="Wax in Ear Canal" />-->
+                    <!--</RadioGroup>-->
+                    <!--<TextView-->
+                        <!--android:textSize="16.0sp"-->
+                        <!--android:textColor="@color/colorAccent"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_margin="16.0dip"-->
+                        <!--android:text="(b) History of ear discharge" />-->
+                    <!--<RadioGroup-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:id="@+id/earDischargeRG"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/yesRD31"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="16.0dip"-->
+                            <!--android:text="Yes" />-->
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/noRD32"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="16.0dip"-->
+                            <!--android:text="No" />-->
+                    <!--</RadioGroup>-->
+                    <!--<TextView-->
+                        <!--android:textSize="16.0sp"-->
+                        <!--android:textColor="@color/colorAccent"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_margin="16.0dip"-->
+                        <!--android:text="(c) History of ear operated" />-->
+                    <!--<android.support.design.widget.TextInputLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="6.0dip">-->
+                        <!--<android.support.design.widget.TextInputEditText-->
+                            <!--android:id="@+id/earOperatedAns"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text=""-->
+                            <!--android:hint=" Answer" />-->
+                    <!--</android.support.design.widget.TextInputLayout>-->
+                    <!--<TextView-->
+                        <!--android:textSize="16.0sp"-->
+                        <!--android:textColor="@color/colorAccent"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_margin="16.0dip"-->
+                        <!--android:text="(d) Medical History :- " />-->
+                    <!--<android.support.design.widget.TextInputLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="6.0dip">-->
+                        <!--<android.support.design.widget.TextInputEditText-->
+                            <!--android:id="@+id/ENTAnsTIL"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text=""-->
+                            <!--android:hint="Consulted to ENT ?" />-->
+                    <!--</android.support.design.widget.TextInputLayout>-->
+                    <!--<android.support.design.widget.TextInputLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="6.0dip">-->
+                        <!--<android.support.design.widget.TextInputEditText-->
+                            <!--android:id="@+id/treatPrescribedText"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text=""-->
+                            <!--android:hint="What All treatments prescribed" />-->
+                    <!--</android.support.design.widget.TextInputLayout>-->
+                    <!--<android.support.design.widget.TextInputLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="6.0dip">-->
+                        <!--<android.support.design.widget.TextInputEditText-->
+                            <!--android:id="@+id/sleepingPills"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text=""-->
+                            <!--android:hint="Taking Sleeping Pills" />-->
+                    <!--</android.support.design.widget.TextInputLayout>-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+        <!--</android.support.v7.widget.CardView>-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/otherEarHistoryCV"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="8.0dip"-->
+            <!--&gt;-->
+            <!--<LinearLayout-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+                <!--<TextView-->
+                    <!--android:textSize="18.0sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/colorPrimary"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:id="@+id/CV4Heading"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="16.0dip"-->
+                    <!--android:text="Other Medical history if Any" />-->
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:id="@+id/otherMedicalHistTIL"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="6.0dip">-->
+                    <!--<android.support.design.widget.TextInputEditText-->
+                        <!--android:id="@+id/otherHstoryTIL"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text=""-->
+                        <!--android:hint="Thyroid/B.P/Diabetic/Sinus/Spontalitics/Heart Problem/Neuro Problem" />-->
+                <!--</android.support.design.widget.TextInputLayout>-->
+            <!--</LinearLayout>-->
+        <!--</android.support.v7.widget.CardView>-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/occupationCV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8.0dip">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:id="@+id/CV5Heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16.0dip"
+                    android:text="Types of occupation" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/occupationLL"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@color/colorAccent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:text="(a) Occupation" />
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:id="@+id/typeOfEnviromentRG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RadioButton
+                            android:id="@+id/callCentreRD51"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Call Centre" />
+                        <RadioButton
+                            android:id="@+id/silentWorkplaceRD52"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Silent Workplace" />
+                        <RadioButton
+                            android:id="@+id/manFacRD53"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Manufacturing unit" />
+                    </RadioGroup>
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@color/colorAccent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:text="(a) Office environment" />
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:id="@+id/typeOfOccupationRG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RadioButton
+                            android:id="@+id/quiteRD61"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quite" />
+                        <RadioButton
+                            android:id="@+id/noisyRD62"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Noisy" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <Button
+            android:textStyle="bold"
+            android:id="@+id/addPatientButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8.0dip"
+            android:text="Add Patient" />
+    </LinearLayout>
+</ScrollView>

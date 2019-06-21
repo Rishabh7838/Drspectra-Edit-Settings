@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <android.support.v7.widget.CardView
+            android:id="@+id/connectCV"
+            android:clickable="true"
+            android:longClickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5.0dip"
+            app:cardBackgroundColor="#fffafafa">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="5.0dip">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_margin="16.0dip"
+                    android:src="@drawable/ic_add_circle_outline_black_24dp" />
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6.0dip"
+                    android:layout_marginRight="6.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:text="Connect Device" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/addPatientCV"
+            android:clickable="true"
+            android:longClickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5.0dip"
+            app:cardBackgroundColor="#fffafafa">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="5.0dip">
+                <ImageView android:layout_gravity="center"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_margin="16.0dip"
+                    android:src="@drawable/ic_add_to_photos_black_24dp" />
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6.0dip"
+                    android:layout_marginRight="6.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:text="Add Patiens" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/Appointments"
+            android:clickable="true"
+            android:longClickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5.0dip"
+            app:cardBackgroundColor="#fffafafa">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="5.0dip">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_margin="16.0dip"
+                    android:src="@drawable/ic_assignment_ind_black_24dp" />
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6.0dip"
+                    android:layout_marginRight="6.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:text="Appointments" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/InfoCV"
+            android:clickable="true"
+            android:longClickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5.0dip"
+            app:cardBackgroundColor="#fffafafa">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="5.0dip">
+                <ImageView android:layout_gravity="center"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_margin="16.0dip"
+                    android:src="@drawable/ic_announcement_black_24dp" />
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6.0dip"
+                    android:layout_marginRight="6.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:text="View Info" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>

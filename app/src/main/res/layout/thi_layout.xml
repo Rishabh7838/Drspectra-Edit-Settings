@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" app:cardBackgroundColor="#fffafafa" app:cardElevation="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="16.0sp" android:textStyle="bold|italic" android:textColor="#ff2e2e2e" android:id="@+id/THIQuesTV" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0dip" android:text="THI Question" />
+        <RadioGroup android:orientation="horizontal" android:id="@+id/thiAnsRG" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip">
+            <RadioButton android:id="@+id/thiYesRB" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="yes" />
+            <RadioButton android:id="@+id/thiNoRB" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:checked="true" android:text="no" />
+            <RadioButton android:id="@+id/thiSometimesRB" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="sometimes" />
+        </RadioGroup>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
