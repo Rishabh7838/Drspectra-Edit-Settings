@@ -1,5 +1,6 @@
 package com.example.rish.drspectraadmin;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.ProgressDialog;
@@ -25,19 +26,28 @@ public class ConnectActivity extends AppCompatActivity {
     private RecyclerView deviceDetailRV;
     private DatabaseReference deviceList;
     private ProgressDialog loadDetailPB;
+    private FloatingActionButton addDeviceFab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
 
-        this.deviceDetailRV = (RecyclerView) findViewById(R.id.deviceDetailRV);
-        this.deviceDetailRV.setLayoutManager(new LinearLayoutManager(this));
-        this.deviceDetailRV.setHasFixedSize(true);
-        this.loadDetailPB = new ProgressDialog(this);
-        this.loadDetailPB.setMessage("Loading details...");
-        this.loadDetailPB.show();
-        this.deviceList = FirebaseDatabase.getInstance().getReference().child("Device_Details");
+        deviceDetailRV = findViewById(R.id.deviceDetailRV);
+        addDeviceFab = findViewById(R.id.addDevicesFab);
+        deviceDetailRV.setLayoutManager(new LinearLayoutManager(this));
+        deviceDetailRV.setHasFixedSize(true);
+        loadDetailPB = new ProgressDialog(this);
+        loadDetailPB.setMessage("Loading details...");
+        loadDetailPB.show();
+        deviceList = FirebaseDatabase.getInstance().getReference().child("Device_Details");
         loadDetails();
+
+        addDeviceFab.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConnectActivity.this,AddDeviceActivity.class));
+            }
+        });
     }
     private void loadDetails() {
         this.adapter = new FirebaseRecyclerAdapter<DeviceDetail, DeviceDetailViewHolder>(DeviceDetail.class, R.layout.device_detail_layout, DeviceDetailViewHolder.class, this.deviceList) {
@@ -62,7 +72,7 @@ public class ConnectActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent i = new Intent(ConnectActivity.this, DeviceBluetoothSettingActivity.class);
                         i.putExtra("DeviceID", model.getid());
-                        Log.e("ID2", model.getid());
+//                        Log.e("ID2", model.getid());
                         ConnectActivity.this.startActivity(i);
                     }
                 });

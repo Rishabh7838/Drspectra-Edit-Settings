@@ -23,7 +23,7 @@
         <activity android:name=".addPatientActivity" />
         <activity android:name=".AuthenticationActivity" />
         <activity android:name=".DeviceSettingActivity" />
-        <activity android:name=".THIScoreActivity" />
+        <activity android:name=".AddDeviceActivity" />
         <activity android:name=".ConnectActivity" />
         <activity android:name=".DeviceBluetoothSettingActivity"></activity>
     </application>

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         this.addPatientCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this, PatientActivity.class));
+                MainActivity.this.startActivity(new Intent(MainActivity.this, addPatientActivity.class));
             }
         });
     }
