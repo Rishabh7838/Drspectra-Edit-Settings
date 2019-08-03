@@ -98,12 +98,16 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
 
                     try
                     {
+                        int soundValue = 0;
+                        if(!soundET.getText().toString().isEmpty()) {
+                            soundValue = Integer.parseInt(soundET.getText().toString());
+                        }
                         if(soundET.getText().toString().isEmpty())
                             soundET.setError("Sound can not be empty");
                         else if(volET.getText().toString().isEmpty())
                             volET.setError("Volume can not be empty");
-                        else if(Integer.parseInt(soundET.getText().toString())>10)
-                            soundET.setError("Sound should be in range of 1-10");
+                        else if((soundValue>10 && soundValue<15) || soundValue>66)
+                            soundET.setError("Sound should be in range of 1-10 or 15-66");
                         else if(Integer.parseInt(volET.getText().toString())>21)
                             volET.setError("Volume should be in range of 1-21");
 
@@ -167,7 +171,7 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
                             vol = volET.getText().toString();
                             editDetailMap.put("volume", vol);
 
-                            query = freq+","+ear+","+sound+","+vol+","+sessionStatus+","+mode+","+timerStatus+",$";
+                            query = freq+","+ear+","+sound+","+vol+","+sessionStatus+","+mode+","+timerStatus+",#";
                             FirebaseDatabase.getInstance().getReference().child("Device_Details").child(device_id).updateChildren(editDetailMap);
                             FirebaseDatabase.getInstance().getReference().child("Device_Details").child(device_id).child("Query")
                                     .setValue(query).addOnSuccessListener(new OnSuccessListener<Void>() {
