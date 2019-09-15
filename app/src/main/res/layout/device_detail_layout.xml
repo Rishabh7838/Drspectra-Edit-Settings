@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="6.0dip"
-            android:text="Sound :"
+            android:text="Therapy :"
             android:layout_below="@+id/FreqDetailView" />
         <TextView
             android:textSize="14.0sp"
@@ -119,7 +119,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="6.0dip"
             android:text="Frequency Value:"
-            android:layout_below="@+id/DBDetailView" />
+            android:layout_below="@+id/DBDetailView"
+            android:visibility="gone"/>
         <TextView android:textSize="14.0sp"
             android:textStyle="bold"
             android:textColor="#ff1976d2"
@@ -130,7 +131,8 @@
             android:layout_marginBottom="6.0dip"
             android:text="0"
             android:layout_toRightOf="@+id/FreqValueView"
-            android:layout_below="@+id/DBDetailTV" />
+            android:layout_below="@+id/DBDetailTV"
+            android:visibility="gone"/>
         <TextView
             android:textSize="14.0sp"
             android:textStyle="bold"
@@ -199,23 +201,24 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:textColor="#ff1976d2"
-            android:id="@+id/ConnectionView"
+            android:id="@+id/modeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="6.0dip"
-            android:text="Connection:"
+            android:text="Mode: "
             android:layout_below="@+id/TimerView" />
         <TextView android:textSize="14.0sp"
             android:textStyle="bold"
-            android:textColor="#f00"
-            android:id="@+id/ConnectionTV"
+            android:textColor="#ff1976d2"
+            android:id="@+id/modeViewTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6.0dip"
             android:layout_marginBottom="6.0dip"
-            android:text="Not Connected"
-            android:layout_toRightOf="@+id/ConnectionView"
-            android:layout_below="@+id/TimerTV" />
+            android:text="Therapy"
+            android:layout_toRightOf="@+id/modeView"
+            android:layout_below="@+id/TimerTV"
+            />
         <Button
             android:textStyle="bold"
             android:textColor="@android:color/white"
@@ -252,7 +255,7 @@
             android:layout_marginRight="10.0dip"
             android:layout_marginBottom="5.0dip"
             android:text="Update Now"
-
+            android:visibility="gone"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

@@ -83,7 +83,23 @@
                         android:layout_height="wrap_content"
                         android:text="Both"/>
                 </RadioGroup>
+                <TextView
+                    android:id="@+id/modeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Mode :-"
+                    android:textStyle="bold"
 
+                    />
+                <Spinner
+                    android:id="@+id/ModeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_margin="10dp"
+                    />
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

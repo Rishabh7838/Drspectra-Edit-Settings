@@ -27,12 +27,14 @@ public class AddDeviceActivity extends AppCompatActivity {
 
     private RadioGroup freqRG,earRG,modeRG;
     private TextInputEditText soundET,volET,idET,nameET;
-    private Spinner sessionSpinner,timerSpinner;
-    private String device_id = "";
+    private Spinner sessionSpinner,timerSpinner,modeSpinner;
+    private String device_id = "",modeName = "Therapy";
     private Map<String, Object> editDetailMap = new HashMap();
     private String session[] = new String[]{"20","30","40","50","60","70","80","90","100","110","120","130","140","150","160","170","180","190","200","210","220","230","240","250"};
     private String timer[] = new String[]{"5","10","15","20","25","30","35","40","45",};
+    private String mode[] = new String[]{"Therapy","Vertigo","Sleeping Disturbances","Noise Irritation","Headache","Sound in back of head"};
     private String sessionStatus = "50",timerStatus = "15";
+    private String freq = "$,1",ear = "1",mode1 = "1",vol,sound,query;
     Button add;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class AddDeviceActivity extends AppCompatActivity {
         volET = findViewById(R.id.addDevicevolumeET);
         sessionSpinner = findViewById(R.id.addDeviceSessionET);
         timerSpinner = findViewById(R.id.addDeviceTimerET);
+        modeSpinner = findViewById(R.id.modeAddDeviceSpinner);
         nameET = findViewById(R.id.addDeviceOwenerNameET);
         idET = findViewById(R.id.addDeviceIDET);
 
@@ -56,6 +59,10 @@ public class AddDeviceActivity extends AppCompatActivity {
         ArrayAdapter<String> timeradapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,timer);
         timeradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         timerSpinner.setAdapter(timeradapter);
+
+        ArrayAdapter<String> modeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,mode);
+        modeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        modeSpinner.setAdapter(modeAdapter);
 
         sessionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -75,6 +82,20 @@ public class AddDeviceActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 timerStatus = timer[position];
                 editDetailMap.put("timer", timerStatus);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        modeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                modeName = mode[position];
+                editDetailMap.put("current_mode", modeName);
+
             }
 
             @Override
@@ -103,7 +124,7 @@ public class AddDeviceActivity extends AppCompatActivity {
                         nameET.setError("Owner name can not be empty");
 
                     else {
-                        String freq = "$,1",ear = "1",mode = "1",vol,sound,query;
+
                         switch(freqRG.getCheckedRadioButtonId()){
 
                             case R.id.addDeviceRB11:
@@ -141,11 +162,11 @@ public class AddDeviceActivity extends AppCompatActivity {
                         switch(modeRG.getCheckedRadioButtonId()){
 
                             case R.id.addDeviceRB31:
-                                mode = "1";
+                                mode1 = "1";
                                 break;
 
                             case R.id.addDeviceRB32:
-                                mode = "2";
+                                mode1 = "2";
                                 break;
                         }
 
@@ -161,7 +182,7 @@ public class AddDeviceActivity extends AppCompatActivity {
                         vol = volET.getText().toString();
                         editDetailMap.put("volume", vol);
 
-                        query = freq+","+ear+","+sound+","+vol+","+sessionStatus+","+mode+","+timerStatus+",$";
+                        query = freq+","+ear+","+sound+","+vol+","+sessionStatus+","+mode1+","+timerStatus+",#";
                         editDetailMap.put("Query",query);
                         editDetailMap.put("id", idET.getText().toString());
                         editDetailMap.put("ownerName", nameET.getText().toString());
@@ -175,7 +196,8 @@ public class AddDeviceActivity extends AppCompatActivity {
                                 FirebaseDatabase.getInstance().getReference().child("Device_Details").child(device_id)
                                         .child("updation_time")
                                         .setValue(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
-
+                                FirebaseDatabase.getInstance().getReference().child("Device_Details").child(device_id).child("Mode")
+                                        .child(editDetailMap.get("current_mode").toString()).child("ModeQuery").setValue(query);
                                 onBackPressed();
                             }
                         })

@@ -29,11 +29,12 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
 
     private RadioGroup freqRG,earRG,modeRG;
     private TextInputEditText soundET,volET;
-    private Spinner sessionSpinner,timerSpinner;
-    private String device_id = "";
+    private Spinner sessionSpinner,timerSpinner,modeSpinner;
+    private String device_id = "",modeName = "Therapy";
     private Map<String, Object> editDetailMap = new HashMap();
     private String session[] = new String[]{"20","30","40","50","60","70","80","90","100","110","120","130","140","150","160","170","180","190","200","210","220","230","240","250"};
     private String timer[] = new String[]{"5","10","15","20","25","30","35","40","45",};
+    private String mode[] = new String[]{"Therapy","Vertigo","Sleeping Disturbances","Noise Irritation","Headache","Sound in back of head"};
     private String sessionStatus = "50",timerStatus = "15";
     Button connect;
     @Override
@@ -55,6 +56,7 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
         volET = findViewById(R.id.volumeET);
         sessionSpinner = findViewById(R.id.SessionET);
         timerSpinner = findViewById(R.id.TimerET);
+        modeSpinner = findViewById(R.id.ModeSpinner);
 
         ArrayAdapter<String> sessionadapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,session);
         sessionadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -63,6 +65,12 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
         ArrayAdapter<String> timeradapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,timer);
         timeradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         timerSpinner.setAdapter(timeradapter);
+
+
+        ArrayAdapter<String> modeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,mode);
+        modeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        modeSpinner.setAdapter(modeAdapter);
+
 
         sessionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -83,6 +91,20 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 timerStatus = timer[position];
                 editDetailMap.put("timer", timerStatus);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        modeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                modeName = mode[position];
+                editDetailMap.put("current_mode", modeName);
+
             }
 
             @Override
@@ -139,11 +161,11 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
                                     break;
 
                                 case R.id.RB22:
-                                    ear = "2";
+                                    ear = "3";
                                     editDetailMap.put("ear", "Right");
                                     break;
                                 case R.id.RB23:
-                                    ear = "3";
+                                    ear = "2";
                                     editDetailMap.put("ear", "Both");
                                     break;
                             }
@@ -173,7 +195,7 @@ public class DeviceBluetoothSettingActivity extends AppCompatActivity {
 
                             query = freq+","+ear+","+sound+","+vol+","+sessionStatus+","+mode+","+timerStatus+",#";
                             FirebaseDatabase.getInstance().getReference().child("Device_Details").child(device_id).updateChildren(editDetailMap);
-                            FirebaseDatabase.getInstance().getReference().child("Device_Details").child(device_id).child("Query")
+                            FirebaseDatabase.getInstance().getReference().child("Device_Details").child(device_id).child("Mode").child(modeName).child("ModeQuery")
                                     .setValue(query).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

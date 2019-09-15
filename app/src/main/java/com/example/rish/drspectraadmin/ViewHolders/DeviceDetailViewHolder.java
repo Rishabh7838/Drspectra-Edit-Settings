@@ -19,7 +19,7 @@ public class DeviceDetailViewHolder extends RecyclerView.ViewHolder implements V
     public TextView volumeDetail;
     public TextView freqValueDetail;
     public TextView updateDateTV;
-    public TextView connectionStatusTV;
+    public TextView modeStatusTV;
     public ItemClickListener itemClickListener;
     public TextView ownerName;
 
@@ -41,7 +41,7 @@ public class DeviceDetailViewHolder extends RecyclerView.ViewHolder implements V
         timerDetail = itemView.findViewById(R.id.TimerTV);
         volumeDetail = itemView.findViewById(R.id.VolumeTV);
         updateDateTV = itemView.findViewById(R.id.updationDateTV);
-        connectionStatusTV = itemView.findViewById(R.id.ConnectionTV);
+        modeStatusTV = itemView.findViewById(R.id.modeViewTV);
         itemView.setOnClickListener(this);
     }
 

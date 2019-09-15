@@ -41,6 +41,25 @@
                         android:text="" android:hint=" Enter Owner Name"
                         android:inputType="text"/>
                 </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/modeAddDeviceTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Mode :-"
+                    android:textStyle="bold"
+
+                    />
+                <Spinner
+                    android:id="@+id/modeAddDeviceSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_margin="10dp"
+                    />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

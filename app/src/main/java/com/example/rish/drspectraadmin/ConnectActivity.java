@@ -66,7 +66,7 @@ public class ConnectActivity extends AppCompatActivity {
                 viewHolder.timerDetail.setText(model.getTimer());
                 viewHolder.volumeDetail.setText(model.getVolume());
                 viewHolder.updateDateTV.setText("Update Date: "+model.getUpdation_time());
-                viewHolder.connectionStatusTV.setText(model.getConnection_status());
+                viewHolder.modeStatusTV.setText(model.getCurrent_mode());
 
                 viewHolder.editSettings.setOnClickListener(new OnClickListener() {
                     public void onClick(View v) {

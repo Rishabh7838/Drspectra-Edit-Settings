@@ -11,12 +11,12 @@ public class DeviceDetail {
     String timer;
     String volume;
     String updation_time;
-    String connection_status;
+    String current_mode;
 
     public DeviceDetail() {
     }
 
-    public DeviceDetail(String id, String ownerName, String frequency, String ear, String db_Value, String frequency_Value,String volume,String session,String timer, String updation_time, String connection_status) {
+    public DeviceDetail(String id, String ownerName, String frequency, String ear, String db_Value, String frequency_Value,String volume,String session,String timer, String updation_time, String current_mode) {
         this.id = id;
         this.ownerName = ownerName;
         this.frequency = frequency;
@@ -27,7 +27,7 @@ public class DeviceDetail {
         this.timer =timer;
         this.volume =volume;
         this.updation_time = updation_time;
-        this.connection_status = connection_status;
+        this.current_mode = current_mode;
     }
 
     public String getSession() {
@@ -46,12 +46,12 @@ public class DeviceDetail {
         this.updation_time = updation_time;
     }
 
-    public String getConnection_status() {
-        return connection_status;
+    public String getCurrent_mode() {
+        return current_mode;
     }
 
-    public void setConnection_status(String connection_status) {
-        this.connection_status = connection_status;
+    public void setCurrent_mode(String current_mode) {
+        this.current_mode = current_mode;
     }
 
     public String getTimer() {
